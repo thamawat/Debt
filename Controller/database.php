@@ -18,9 +18,9 @@ class database{
 		public static function test(){
 			self::connect();
 			$strSql = "SELECT created_at FROM instance_actions WHERE id = 1;";
-			$qrySql = mysqli_query(self::$connect, $strSql);
-			if($qrySql){
-				$data = mysqli_fetch_assoc($qrySql)['created_at'];
+			$query = mysqli_query(self::$connect, $strSql);
+			if($query){
+				$data = mysqli_fetch_assoc($query)['created_at'];
 				self::close();
 				return $data;
 			}
@@ -30,11 +30,11 @@ class database{
 			}
 		}
 
-		public static function query($qrySql){
+		public static function query($strSql){
 			self::connect();
-			$qrySql = mysqli_query(self::$connect, $strSql);
-			if($qrySql){
-				$data = mysqli_fetch_assoc($qrySql);
+			$query = mysqli_query(self::$connect, $strSql);
+			if($query){
+				$data = mysqli_fetch_assoc($query);
 				self::close();
 				return $data;
 			}

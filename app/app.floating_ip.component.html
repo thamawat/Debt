@@ -1,0 +1,27 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+   <h1 class="page-header">Rating > Floating IP</h1>
+   <div class="row placeholders">
+   </div>
+   <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Floating IP</th>
+               <th>Fixed IP</th>
+               <th>Status</th>
+               <th>Price</th>
+               <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ip of floatingip">
+            <td>{{ip.floating_ip}}</td>
+            <td>{{ip.fixed_ip}}</td>
+            <td>{{ip.status}}</td>
+            <td>Baht</td>
+            <td><a href="">Edit</a></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+</div>

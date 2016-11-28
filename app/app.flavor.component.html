@@ -1,0 +1,39 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+   <h1 class="page-header">Rating > Flavor</h1>
+   <div class="row placeholders">
+   </div>
+   <div class="table-responsive">
+   		<table class="table table-striped">
+        	<thead>
+            	<tr>
+               		<th>Name</th>
+               		<th>vCPUs</th>
+               		<th>RAM</th>
+               		<th>Root Disk</th>
+                  <th>Ephemeral Disk</th>
+               		<th>Swap Disk</th>
+               		<th>RX/TX factor</th>
+               		<th>ID</th>
+                  <th>Public</th>
+               		<th>Price</th>
+                  <th></th>
+           		</tr>
+        	</thead>
+        	<tbody>
+        		<tr *ngFor="let flavor of flavors">
+              <td>{{flavor.name}}</td>
+              <td>{{flavor.vcpu}}</td>
+              <td>{{flavor.ram > 1024 ? flavor.ram/1024 + ' GB' : flavor.ram + ' MB'}}</td>
+              <td>{{flavor.disk + ' GB'}}</td>
+              <td>{{flavor.ephemeral_disk + ' GB'}}</td>
+              <td>{{flavor.swap_disk + ' MB'}}</td>
+              <td>{{flavor.rxtx}}</td>
+              <td>{{flavor.id}}</td>
+              <td>{{flavor.ispublic == "true" ? "Yes" : "No"}}</td>
+              <td>Baht</td>
+              <td><a href="">Edit</a></td>
+            </tr>
+        	</tbody>
+    	</table>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" (click)="onSelect('overview')" routerLink="/overview" routerLinkActive='active'>Debt</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Settings</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">{{token}}</a></li>
+         </ul>
+         <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+         </form>
+      </div>
+   </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="header"><b>Dashboard</b></li>
+          <li [class.active]="'overview' === selectedButton"><a (click)="onSelect('overview')" routerLink="/overview" routerLinkActive='active'>Overview<span class="sr-only">(current)</span></a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li class="header"><b>Rating</b></li>
+          <li [class.active]="'data_transfer' === selectedButton"><a (click)="onSelect('data_transfer')" routerLink="/data_transfer" routerLinkActive='active'>Data Transfer</a></li>
+          <li [class.active]="'disk' === selectedButton"><a (click)="onSelect('disk')" routerLink="/disk" routerLinkActive='active'>Disk</a></li>
+          <li [class.active]="'flavor' === selectedButton"><a (click)="onSelect('flavor')" routerLink="/flavor" routerLinkActive='active'>Flavor</a></li>
+          <li [class.active]="'floating_ip' === selectedButton"><a (click)="onSelect('floating_ip')" routerLink="/floating_ip" routerLinkActive='active'>Floating IP</a></li>
+          <li [class.active]="'instance' === selectedButton"><a (click)="onSelect('instance')" routerLink="/instance" routerLinkActive='active'>Instance</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
